@@ -16,7 +16,7 @@ spec:
         - containerPort: 5432
         volumeMounts:
         - name: postgres-fs
-          mountPath: /var/lib/registry
+          mountPath: /var/lib/postgresql/data
       imagePullSecrets:
       - name: regsecret
       volumes:
