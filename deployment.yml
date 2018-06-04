@@ -27,6 +27,8 @@ spec:
           options:
             fsName: myfs # name of the filesystem specified in the filesystem CRD.
             clusterNamespace: rook-ceph
+      securityContext:
+        fsGroup: 7777
 ---
 kind: Service
 apiVersion: v1
