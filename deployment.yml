@@ -16,7 +16,7 @@ spec:
         - containerPort: 5432
         volumeMounts:
         - name: postgres-fs
-          mountPath: /tmp/mountpoint
+          mountPath: /var/lib/postgresql/data
       imagePullSecrets:
       - name: regsecret
       volumes:
@@ -27,6 +27,7 @@ spec:
           options:
             fsName: myfs # name of the filesystem specified in the filesystem CRD.
             clusterNamespace: rook-ceph
+            path: /postgresql
       securityContext:
         fsGroup: 7777
 ---
